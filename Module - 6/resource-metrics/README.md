@@ -6,7 +6,6 @@ Since heapster is now deprecated and has reached end of life, we will use metric
 
 ```
 kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
-
 ```
 
 Ensure that metrics server is running 
@@ -14,9 +13,9 @@ Ensure that metrics server is running
 ```
 kubectl get pods -n kube-system | grep metrics
 ```
-```
-metrics-server-v0.3.1-8d4c5db46-fgb6v                          2/2     Running   0          5m39s
-```
+
+> metrics-server-v0.3.1-8d4c5db46-fgb6v                          2/2     Running   0          5m39s
+
 
 ## Gather Pod Resource metrics
 
