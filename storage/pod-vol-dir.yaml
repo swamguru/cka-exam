@@ -1,0 +1,19 @@
+#Directory - Host Drive, persistent
+apiVersion: v1
+kind: Pod
+metadata:
+  name: webapp
+spec:
+  containers:
+    - name: event-simulator
+      image: nginx
+      volumeMounts:
+        - name: log-volume
+          mountPath: /log
+  volumes:
+    - name: log-volume
+      hostPath:
+        # directory location on host
+        path: /var/log/webapp
+        # this field is optional
+        type: Directory
