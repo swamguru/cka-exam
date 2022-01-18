@@ -5,9 +5,7 @@ Since heapster is now deprecated and has reached end of life, we will use metric
 ## Install metrics server 
 
 ```
-git clone https://github.com/kubernetes-incubator/metrics-server
-cd metrics-server/deploy
-kubectl create -f 1.8+/
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
 
 ```
 
