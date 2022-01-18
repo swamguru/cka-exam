@@ -8,7 +8,7 @@ Since heapster is now deprecated and has reached end of life, we will use metric
 kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
 ```
 
-Bug Fix: 
+## Bug Fix: 
 
 adding --kubelet-insecure-tls
 
@@ -59,7 +59,7 @@ kube-system   stackdriver-metadata-agent-cluster-level-8688665b4f-gg796      3m 
 To see the CPU and memory usage for the individual containers of a pod - 
 
 ```
-kubectl top pod metrics-server-v0.3.1-8d4c5db46-fgb6v -n kube-system --containers
+kubectl top pod metrics-server-<pod> -n kube-system --containers
 ```
 ```
 POD                                     NAME                   CPU(cores)   MEMORY(bytes)
@@ -81,11 +81,11 @@ gke-standard-cluster-1-default-pool-410b975c-xt8b   69m          7%     764Mi   
 We can also see the CPU and memory usage for individual nodes by specifying a node name
 
 ```
-kubectl top node gke-standard-cluster-1-default-pool-410b975c-7jpk 
+kubectl top node master
 ```
 ```
 NAME                                                CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%
-gke-standard-cluster-1-default-pool-410b975c-7jpk   46m          4%     571Mi           21%
+master                                                 46m          4%     571Mi           21%
 
 ```
 
