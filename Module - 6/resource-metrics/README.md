@@ -14,13 +14,16 @@ Ensure that metrics server is running
 ```
 kubectl get pods -n kube-system | grep metrics
 ```
+```
 metrics-server-v0.3.1-8d4c5db46-fgb6v                          2/2     Running   0          5m39s
+```
 
 ## Gather Pod Resource metrics
 
 ```
 kubectl top pods --all-namespaces
-
+```
+```
 NAMESPACE     NAME                                                           CPU(cores)   MEMORY(bytes)
 kube-system   event-exporter-v0.2.5-7df89f4b8f-gtrzv                         1m           18Mi
 kube-system   fluentd-gcp-scaler-54ccb89d5-8mjr6                             0m           31Mi
@@ -43,7 +46,8 @@ To see the CPU and memory usage for the individual containers of a pod -
 
 ```
 kubectl top pod metrics-server-v0.3.1-8d4c5db46-fgb6v -n kube-system --containers
-
+```
+```
 POD                                     NAME                   CPU(cores)   MEMORY(bytes)
 metrics-server-v0.3.1-8d4c5db46-fgb6v   metrics-server-nanny   1m           4Mi
 metrics-server-v0.3.1-8d4c5db46-fgb6v   metrics-server         1m           12Mi
@@ -53,7 +57,8 @@ metrics-server-v0.3.1-8d4c5db46-fgb6v   metrics-server         1m           12Mi
 
 ```
 kubectl top node
-
+```
+```
 NAME                                                CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%
 gke-standard-cluster-1-default-pool-410b975c-7jpk   40m          4%     570Mi           21%
 gke-standard-cluster-1-default-pool-410b975c-xt8b   69m          7%     764Mi           28%
@@ -63,7 +68,8 @@ We can also see the CPU and memory usage for individual nodes by specifying a no
 
 ```
 kubectl top node gke-standard-cluster-1-default-pool-410b975c-7jpk 
-
+```
+```
 NAME                                                CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%
 gke-standard-cluster-1-default-pool-410b975c-7jpk   46m          4%     571Mi           21%
 
