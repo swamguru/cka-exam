@@ -1,4 +1,4 @@
-Apply PV, PVC and mysql-ss-updated
+Apply PV, PVC and mariadb-ss-updated
 
 kubectl run curl --image=radial/busyboxplus:curl -i --tty
 
