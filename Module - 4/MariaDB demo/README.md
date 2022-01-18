@@ -1,5 +1,12 @@
 Apply PV, PVC and mariadb-ss-updated
 
+k get pv
+k get pvc
+k get statefulsets
+
+Get SS Hostnames
+for i in 0 1 2; do kubectl exec "galera-ss-$i" -- sh -c 'hostname'; done
+
 kubectl run curl --image=radial/busyboxplus:curl -i --tty
 
 [ root@curl:/ ]$ nslookup galera-ss-0
