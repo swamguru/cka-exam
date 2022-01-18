@@ -8,6 +8,21 @@ Since heapster is now deprecated and has reached end of life, we will use metric
 kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
 ```
 
+Bug Fix: 
+
+adding --kubelet-insecure-tls
+
+```
+kubectl edit deploy metrics-server -n kube-system
+```
+      containers:
+      - args:
+        - --cert-dir=/tmp
+        - --secure-port=8448
+        - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
+        - --kubelet-insecure-tls
+
+
 Ensure that metrics server is running 
 
 ```
